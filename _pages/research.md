@@ -13,8 +13,8 @@ This paper studies the effects of the COVID-19 pandemic on small businesses betw
 
 
 ## Works in Progress
-**Intragenerational Inequality in the Social Cost of Carbon** \\
-My senior thesis incorporates equity-weighting into the social cost of carbon.
+**Intragenerational Inequality in the Social Cost of Carbon** (advised by [Kenneth Gillingham]([url](https://resources.environment.yale.edu/gillingham/)))\\
+The social cost of carbon dioxide (SC-CO2) measures the monetized value of the damages to society caused by the additional emissions of one metric ton of CO2 emissions. Many refer to it as the most important number in climate policy. Following a 2017 report by the US National Academies of Sciences, Engineering, and Medicine (NASEM) highlighting that current SC-CO2 estimates no longer reflect the latest research, researchers have created the new open-source Greenhouse Gas Impact Value Estimator (GIVE) model. This paper incorporates equity-weighting, a long talked about "next step" in updating the SC-CO2, into the GIVE model, to reflect that the impacts of climate change asymmetrically affect people and regions.
 
 
 **The Merit Order Effect of Wind and its Effects on Renewable Energy Policy: Evidence from New York** (with Seung Min Kim) \\
