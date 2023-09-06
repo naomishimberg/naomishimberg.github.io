@@ -82,9 +82,9 @@ analytics:
 author:
   name             : "Naomi Shimberg"
   avatar           : "photo.jpg"
-  bio              : "Senior at Yale University"
-  location         : "New Haven, CT"
-  employer         :
+  bio              : 
+  location         : "Washington, D.C."
+  employer         : "White House Council of Economic Advisers"
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : #"http://yourfullgooglescholarurl.com"
   email            :
