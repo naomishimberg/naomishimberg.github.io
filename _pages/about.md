@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: ""
+title: "Naomi Shimberg"
 author_profile: true
 redirect_from: 
   - /about/
