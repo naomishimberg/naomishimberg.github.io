@@ -13,7 +13,7 @@ featuring William Nordhaus, Fran Moore, Howard Shelanski, and Senator Sheldon Wh
 featuring Michael Méndez, Danny Cullenward, Keya Chatterjee, and David Roberts. 
 * **[Without National Climate Action, How Can U.S. States Put a Price on Carbon?](https://podcasts.apple.com/sk/podcast/9-without-national-climate-action-how-can-us-states/id1551374761?i=1000555082201&l=sk)** \\
 featuring Paula Sardinas, Commissioner Katie Dykes, Nicole Wong, Commissioner Martin Suuberg, Rob Klee, and Iliana Paul. 
-* **[Hank Green on How to Talk About Climate Change](https://podcasts.apple.com/us/podcast/bonus-episode-hank-green-on-how-to-talk-about-climate-change/id1551374761?i=1000557075569)** \\
+* **[Hank Green on How to Talk About Climate Change](https://podcasts.apple.com/us/podcast/bonus-episode-hank-green-on-how-to-talk-about-climate-change/id1551374761?i=1000557075569)** 
 * **[Could a New Global Currency Help Avert the Climate Crisis?](https://podcasts.apple.com/us/podcast/13-could-a-new-global-currency-help-avert-the-climate-crisis/id1551374761?i=1000570318041)** \\
 featuring Suzi Kerr, Bill English, Vanessa Fajans-Turner, Samuel Kortum, Frank Van Gansbeke, and Diana Cárdenas. 
 
