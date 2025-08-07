@@ -23,9 +23,8 @@ Resubmission invited at *Nature*
 with Russell Legate-Yang and Meg Snyder
 
 ## Policy Papers and Non-Peer-Reviewed Work
-**Building a Climate Coalition: Aligning Carbon Pricing, Trade, and Development** [[link]]
-2025
-(https://salatainstitute.harvard.edu/wp-content/uploads/2025/06/CCWG-FFD-Interim-Report-FINAL.pdf) \\
+**Building a Climate Coalition: Aligning Carbon Pricing, Trade, and Development** [[link]](https://salatainstitute.harvard.edu/wp-content/uploads/2025/06/CCWG-FFD-Interim-Report-FINAL.pdf) \\
+2025 \\
 _Harvard Salata Institute Report_
 
 **Intragenerational Equity in the Social Cost of Carbon** [[link]](https://github.com/naomishimberg/naomishimberg.github.io/blob/master/files/shimberg_thesis_final.pdf) [[slides]](https://github.com/naomishimberg/naomishimberg.github.io/blob/master/files/Thesis_Slides.pdf) \\
