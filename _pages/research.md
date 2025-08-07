@@ -27,7 +27,7 @@ with Russell Legate-Yang and Meg Snyder
 2025 \\
 _Harvard Salata Institute Report_
 
-**Intragenerational Equity in the Social Cost of Carbon** [[link]](https://github.com/naomishimberg/naomishimberg.github.io/blob/master/files/shimberg_thesis_final.pdf) [[slides]](https://github.com/naomishimberg/naomishimberg.github.io/blob/master/files/Thesis_Slides.pdf) \\
+**Intragenerational Equity in the Social Cost of Carbon** [[link]](https://naomishimberg.github.io/files/shimberg_thesis_final.pdf) [[slides]](https://naomishimberg.github.io/files/Thesis_Slides.pdf) \\
 under the direction of Ken Gillingham and William Nordhaus, 2023 \\
 _Wrexham Prize for Best Senior Essay in the Social Sciences_ \\
 _George Hume Prize for Best Senior Essay in the Ethics, Politics, and Economics major_
