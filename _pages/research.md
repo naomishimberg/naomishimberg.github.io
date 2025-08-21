@@ -7,7 +7,7 @@ author_profile: true
 
 ## Articles
 
-**Small firms and the pandemic: Evidence from Latin America** [[link]](https://www.sciencedirect.com/science/article/pii/S0304387821001358) \\
+**Small firms and the pandemic: Evidence from Latin America** [[link]](https://www.sciencedirect.com/science/article/pii/S0304387821001358) [[Yale News]](https://egc.yale.edu/research/neilson-humphries-and-co-authors-examine-effect-government-covid-related-funding-small-businesses) \\
 with [Maria Elena Guerrero](https://mariaelenaguer.github.io/), [John Eric Humphries](https://johnerichumphries.com/index.html), [Christopher A. Neilson](https://christopherneilson.github.io/), and [Gabriel Ulyssea](https://sites.google.com/view/gabriel-ulyssea), 2022 \\
 *Journal of Development Economics* 
 
@@ -23,7 +23,7 @@ Resubmission invited at *Nature*
 with Russell Legate-Yang and Meg Snyder
 
 ## Policy Papers and Non-Peer-Reviewed Work
-**Building a Climate Coalition: Aligning Carbon Pricing, Trade, and Development** [[link]](https://salatainstitute.harvard.edu/wp-content/uploads/2025/06/CCWG-FFD-Interim-Report-FINAL.pdf) \\
+**Building a Climate Coalition: Aligning Carbon Pricing, Trade, and Development** [[link]](https://salatainstitute.harvard.edu/wp-content/uploads/2025/06/CCWG-FFD-Interim-Report-FINAL.pdf) [[E&E News]](https://subscriber.politicopro.com/article/eenews/2025/08/11/international-carbon-taxes-would-expand-under-climate-proposal-00501066) [[Brazil Ministry of Finance]](https://www.gov.br/fazenda/pt-br/assuntos/noticias/2025/julho/ministerio-da-fazenda-apresenta-ao-brics-e-a-europa-proposta-de-criacao-de-coalizacao-de-paises-para-integrar-mercados-regulados-de-carbono) \\
 2025 \\
 _Harvard Salata Institute Report_
 
