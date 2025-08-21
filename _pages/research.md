@@ -12,7 +12,7 @@ with [Maria Elena Guerrero](https://mariaelenaguer.github.io/), [John Eric Humph
 *Journal of Development Economics* 
 
 ## Working Papers
-**The Equity Weighted Social Cost of Carbon: Higher Estimates are Driven by Disproportionate Health Impacts on the Poor** \\
+**Large Disproportionate Mortality Effects on the Global Poor Drive a Higher Income-Weighted Social Cost of CO$_2$** \\
 with [R. Daniel Bressler](https://rdanielbressler.com/), [Lisa Rennels](https://www.lisarennels.com/), [David Smith](https://www.linkedin.com/in/davidjsmithee/), [Bryan Parthum](https://www.bryanparthum.com/home), [Frank Errickson](https://frankerrickson.github.io/), and [David Anthoff](https://www.david-anthoff.com), 2025 \\
 Resubmission invited at *Nature* 
 
