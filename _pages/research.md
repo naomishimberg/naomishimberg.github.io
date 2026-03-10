@@ -11,7 +11,7 @@ author_profile: true
 with Maria Elena Guerrero, John Eric Humphries, Christopher A. Neilson, and Gabriel Ulyssea, 2022 \\
 *Journal of Development Economics* 
 
-**Climate Mortality Burden on Poor Raises Income Weighted Social Cost of $CO_2$** \\
+**Climate Mortality Burden on Poor Raises Income Weighted Social Cost of CO$_2$** \\
 with R. Daniel Bressler, Lisa Rennels, David Smith, Bryan Parthum, Frank Errickson, and David Anthoff, 2026 \\
 Accepted, *Nature* 
 
