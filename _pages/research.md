@@ -11,10 +11,14 @@ author_profile: true
 with [Maria Elena Guerrero](https://mariaelenaguer.github.io/), [John Eric Humphries](https://johnerichumphries.com/index.html), [Christopher A. Neilson](https://christopherneilson.github.io/), and [Gabriel Ulyssea](https://sites.google.com/view/gabriel-ulyssea), 2022 \\
 *Journal of Development Economics* 
 
+**Climate Mortality Burden on Poor Raises Income Weighted Social Cost of $CO_2$** \\
+with [R. Daniel Bressler](https://rdanielbressler.com/), [Lisa Rennels](https://www.lisarennels.com/), [David Smith](https://www.linkedin.com/in/davidjsmithee/), [Bryan Parthum](https://www.bryanparthum.com/home), [Frank Errickson](https://frankerrickson.github.io/), and [David Anthoff](https://www.david-anthoff.com), 2026 \\
+Accepted, *Nature* 
+
 ## Working Papers
-**Large Disproportionate Mortality Effects on the Global Poor Drive a Higher Income-Weighted Social Cost of CO$_2$** \\
-with [R. Daniel Bressler](https://rdanielbressler.com/), [Lisa Rennels](https://www.lisarennels.com/), [David Smith](https://www.linkedin.com/in/davidjsmithee/), [Bryan Parthum](https://www.bryanparthum.com/home), [Frank Errickson](https://frankerrickson.github.io/), and [David Anthoff](https://www.david-anthoff.com), 2025 \\
-Resubmitted at *Nature* 
+**Building a Scalable Climate Coalition for Heavy Industry** \\
+with Catherine Wolfram, Joseph Aldy, Candido Bracher, Gregory Casey, Kimberly Clausing, Vaibhav Chaturvedi, Carolyn Fischer, Christian Gollier, Allan Hsiao, Frank Jotzo, Marcelo Medeiros, Kyle Meng, Athiphat Muthitacheroen, Axel Ockenfels, Mari Pangestu, Marilyn Pereboom, Arathi Rao, Ivan Rudik, Daouda Sembene, E. Somanathan, Dustin Tingley, and Jennifer Winter
+R&R, *Science Policy Forum*
 
 ## Work in Progress
 **Labor Market Outcomes of the Clean Energy Transition**  
@@ -23,7 +27,11 @@ Resubmitted at *Nature*
 with Russell Legate-Yang and Meg Snyder
 
 ## Policy Papers and Non-Peer-Reviewed Work
-**Building a Climate Coalition: Aligning Carbon Pricing, Trade, and Development** [[link]](https://salatainstitute.harvard.edu/wp-content/uploads/2025/06/CCWG-FFD-Interim-Report-FINAL.pdf) [[FT]](https://on.ft.com/4mOdcX5) [[Bloomberg]](https://www.bloomberg.com/news/articles/2025-09-23/brazil-lobbies-eu-china-to-join-cop30-carbon-market-coalition?embedded-checkout=true) [[E&E News]](https://subscriber.politicopro.com/article/eenews/2025/08/11/international-carbon-taxes-would-expand-under-climate-proposal-00501066) [[Brazil Ministry of Finance]](https://www.gov.br/fazenda/pt-br/assuntos/noticias/2025/julho/ministerio-da-fazenda-apresenta-ao-brics-e-a-europa-proposta-de-criacao-de-coalizacao-de-paises-para-integrar-mercados-regulados-de-carbono) \\
+**Building a Climate Coalition: Aligning Carbon Pricing, Trade, and Development** [[link]](https://salatainstitute.harvard.edu/wp-content/uploads/2025/09/Full-Report-Building-a-Climate-Coalition.pdf) [[FT]](https://on.ft.com/4mOdcX5) [[Bloomberg]](https://www.bloomberg.com/news/articles/2025-09-23/brazil-lobbies-eu-china-to-join-cop30-carbon-market-coalition?embedded-checkout=true) [[E&E News]](https://subscriber.politicopro.com/article/eenews/2025/08/11/international-carbon-taxes-would-expand-under-climate-proposal-00501066) [[Brazil Ministry of Finance]](https://www.gov.br/fazenda/pt-br/assuntos/noticias/2025/julho/ministerio-da-fazenda-apresenta-ao-brics-e-a-europa-proposta-de-criacao-de-coalizacao-de-paises-para-integrar-mercados-regulados-de-carbono) \\
+2025 \\
+_Harvard Salata Institute Report_
+
+**Building a Climate Coalition: Aligning Carbon Pricing, Trade, and Development: An Interim Rerport** [[link]](https://salatainstitute.harvard.edu/wp-content/uploads/2025/06/CCWG-FFD-Interim-Report-FINAL.pdf) \\
 2025 \\
 _Harvard Salata Institute Report_
 
