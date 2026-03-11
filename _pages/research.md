@@ -30,7 +30,7 @@ with Russell Legate-Yang and Meg Snyder
 2025 \\
 _Harvard Salata Institute Report_
 
-**Building a Climate Coalition: Aligning Carbon Pricing, Trade, and Development: An Interim Rerport** [[link]](https://salatainstitute.harvard.edu/wp-content/uploads/2025/06/CCWG-FFD-Interim-Report-FINAL.pdf) \\
+**Building a Climate Coalition: Aligning Carbon Pricing, Trade, and Development: An Interim Report** [[link]](https://salatainstitute.harvard.edu/wp-content/uploads/2025/06/CCWG-FFD-Interim-Report-FINAL.pdf) \\
 2025 \\
 _Harvard Salata Institute Report_
 
