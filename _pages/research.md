@@ -16,7 +16,7 @@ with Maria Elena Guerrero, John Eric Humphries, Christopher A. Neilson, and Gabr
 
 ## Working Papers
 **Building a Scalable Climate Coalition for Heavy Industry** \\
-with Catherine Wolfram, Joseph Aldy, Candido Bracher, Gregory Casey, Kimberly Clausing, Vaibhav Chaturvedi, Carolyn Fischer, Christian Gollier, Allan Hsiao, Frank Jotzo, Marcelo Medeiros, Kyle Meng, Athiphat Muthitacheroen, Axel Ockenfels, Mari Pangestu, Marilyn Pereboom, Arathi Rao, Ivan Rudik, Daouda Sembene, E. Somanathan, Dustin Tingley, and Jennifer Winter \\
+with Catherine Wolfram, Marilyn Pereboom, et al. \\
 R&R, *Science Policy Forum*
 
 ## Work in Progress
