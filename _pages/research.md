@@ -10,7 +10,7 @@ author_profile: true
 with R. Daniel Bressler, Lisa Rennels, David Smith, Bryan Parthum, Frank Errickson, and David Anthoff, 2026 \\
 Accepted, *Nature* 
 
-**Small firms and the pandemic: Evidence from Latin America** [[link]](https://www.sciencedirect.com/science/article/pii/S0304387821001358) [[Yale News]](https://egc.yale.edu/research/neilson-humphries-and-co-authors-examine-effect-government-covid-related-funding-small-businesses) \\
+**Small Firms and the Pandemic: Evidence from Latin America** [[link]](https://www.sciencedirect.com/science/article/pii/S0304387821001358) [[Yale News]](https://egc.yale.edu/research/neilson-humphries-and-co-authors-examine-effect-government-covid-related-funding-small-businesses) \\
 with Maria Elena Guerrero, John Eric Humphries, Christopher A. Neilson, and Gabriel Ulyssea, 2022 \\
 *Journal of Development Economics* 
 
