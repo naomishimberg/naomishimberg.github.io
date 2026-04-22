@@ -20,7 +20,7 @@ with Catherine Wolfram, Marilyn Pereboom, et al. \\
 R&R, *Science Policy Forum*
 
 ## Work in Progress
-**Labor Market Outcomes of the Clean Energy Transition**  
+**Employment Effects of the Inflation Reduction Act**  
 
 **Optimal Interconnection Queue Design and the Costs of the Curent Backlog** \\
 with Russell Legate-Yang and Meg Snyder
