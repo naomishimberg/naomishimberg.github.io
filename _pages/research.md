@@ -8,7 +8,7 @@ author_profile: true
 ## Articles
 **Climate Mortality Burden on Poor Raises Income Weighted Social Cost of CO$_2$** \\
 with R. Daniel Bressler, Lisa Rennels, David Smith, Bryan Parthum, Frank Errickson, and David Anthoff, 2026 \\
-Accepted, *Nature* 
+Forthcoming, *Nature* 
 
 **Small Firms and the Pandemic: Evidence from Latin America** [[link]](https://www.sciencedirect.com/science/article/pii/S0304387821001358) [[Yale News]](https://egc.yale.edu/research/neilson-humphries-and-co-authors-examine-effect-government-covid-related-funding-small-businesses) \\
 with Maria Elena Guerrero, John Eric Humphries, Christopher A. Neilson, and Gabriel Ulyssea, 2022 \\
@@ -20,10 +20,7 @@ with Catherine Wolfram, Marilyn Pereboom, et al. \\
 R&R, *Science Policy Forum*
 
 ## Work in Progress
-**Employment Effects of the Inflation Reduction Act**  
-
-**Optimal Interconnection Queue Design and the Costs of the Curent Backlog** \\
-with Russell Legate-Yang and Meg Snyder
+**Employment Effects of the Inflation Reduction Act** [[link]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6809580)
 
 ## Policy Papers and Non-Peer-Reviewed Work
 **Building a Climate Coalition: Aligning Carbon Pricing, Trade, and Development** [[link]](https://salatainstitute.harvard.edu/wp-content/uploads/2025/09/Full-Report-Building-a-Climate-Coalition.pdf) [[FT]](https://on.ft.com/4mOdcX5) [[Bloomberg]](https://www.bloomberg.com/news/articles/2025-09-23/brazil-lobbies-eu-china-to-join-cop30-carbon-market-coalition?embedded-checkout=true) [[E&E News]](https://subscriber.politicopro.com/article/eenews/2025/08/11/international-carbon-taxes-would-expand-under-climate-proposal-00501066) [[Brazil Ministry of Finance]](https://www.gov.br/fazenda/pt-br/assuntos/noticias/2025/julho/ministerio-da-fazenda-apresenta-ao-brics-e-a-europa-proposta-de-criacao-de-coalizacao-de-paises-para-integrar-mercados-regulados-de-carbono) \\
