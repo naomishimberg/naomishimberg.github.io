@@ -19,6 +19,17 @@ with Maria Elena Guerrero, John Eric Humphries, Christopher A. Neilson, and Gabr
 *Journal of Development Economics* 
 
 ## Work in Progress
+**Practical Barriers to Transmission Expansion** \\
+with Zane Kashner
+
+**Spatial Misallocation in the Era of Rising Electricity Demand**
+
+**Who Should Expand the Grid?**
+with Russell Legate-Yang and Meg Snyder
+
+**Optimal Carbon Border Adjustment Mechanisms**
+with Stephen Holland, Christopher Knittel, Marilyn Pereboom, and Catherine Wolfram
+
 **Employment Effects of the Inflation Reduction Act** [[link]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6809580) \\
 _Finalist, United States Association for Energy Economics Best Student Paper_ 
 
