@@ -27,7 +27,7 @@ with Zane Kashner
 **Who Should Expand the Grid?** \\
 with Russell Legate-Yang and Meg Snyder
 
-**Strategic Carbon Tarriffs** \\
+**Strategic Carbon Tariffs** \\
 with Stephen Holland, Christopher Knittel, Marilyn Pereboom, and Catherine Wolfram
 
 **Employment Effects of the Inflation Reduction Act** [[link]](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6809580) \\
