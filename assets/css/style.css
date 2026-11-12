@@ -8,13 +8,13 @@
   --muted: #555;
 }
 
-.wrapper { width: 930px; margin: 0 auto; }
+.wrapper { width: 990px; margin: 0 auto; }
 
-header { width: 240px; float: left; }
-section { width: 640px; float: right; padding-bottom: 50px; }
+header { width: 250px; float: left; }
+section { width: 690px; float: right; padding-bottom: 50px; }
 
 /* Keep the left column in place while scrolling, as on allanhsiao.com, when the screen is tall enough to show all of it. */
-@media screen and (min-width: 1001px) and (min-height: 860px) {
+@media screen and (min-width: 1001px) and (min-height: 900px) {
   header { position: fixed; }
 }
 
@@ -25,13 +25,13 @@ body {
   color: var(--text);
   padding: 50px;
   margin: 0;
-  font: 13px/1.5 "Open Sans", "Noto Sans", Helvetica, Arial, sans-serif;
+  font: 14px/1.5 "Open Sans", "Noto Sans", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
 
 h1, h2, h3 { margin: 0 0 20px; line-height: 1.1; }
-h1 { color: var(--ink); font-size: 24px; font-weight: 700; }
-h3 { color: var(--text); font-size: 15px; font-weight: 700; margin-top: 28px; }
+h1 { color: var(--ink); font-size: 26px; font-weight: 700; }
+h3 { color: var(--text); font-size: 16px; font-weight: 700; margin-top: 28px; }
 section > h3:first-child { margin-top: 0; }
 
 p { color: var(--text); margin: 0 0 20px; }
@@ -52,7 +52,7 @@ a:hover { text-decoration: underline; }
 .toggle, .action {
   display: inline-flex; align-items: center; gap: 5px;
   padding: 0; border: 0; background: none; cursor: pointer;
-  font: inherit; font-size: 12px; color: var(--muted); text-decoration: none;
+  font: inherit; font-size: 13px; color: var(--muted); text-decoration: none;
 }
 .toggle::before {
   content: ""; width: 4px; height: 4px; flex: none;
@@ -70,7 +70,7 @@ a:hover { text-decoration: underline; }
 .panel {
   margin-top: 8px; padding-left: 10px;
   border-left: 2px solid #c8d6cc;
-  font-size: 12.5px; color: var(--text);
+  font-size: 13.5px; color: var(--text);
 }
 
 .photo {
@@ -85,7 +85,7 @@ a:hover { text-decoration: underline; }
 
 .affiliation { margin-bottom: 16px; }
 
-.links { font-size: 12px; }
+.links { font-size: 13px; }
 .links .sep { color: var(--ink); margin: 0 2px; }
 
 .tag { white-space: nowrap; }
@@ -97,7 +97,7 @@ sub { line-height: 0; }
 @media print, screen and (max-width: 1000px) {
   div.wrapper { width: auto; margin: 0; }
   header, section { float: none; position: static; width: auto; }
-  header { max-width: 640px; }
+  header { max-width: 690px; }
   section { border-top: 1px solid #e5e5e5; padding: 20px 0 0; margin: 0 0 20px; }
 }
 
