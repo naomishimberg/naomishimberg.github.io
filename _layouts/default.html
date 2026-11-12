@@ -1,31 +1,56 @@
----
-layout: compress
----
+<!DOCTYPE html>
+<html lang="en">
 
-{% include base_path %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}Naomi Shimberg</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta property="og:title" content="Naomi Shimberg">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:image" content="{{ site.url }}/images/headshot.jpg">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
 
-<!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
+<body>
+  <div class="wrapper">
+  <header>
+    <img class="photo" src="/images/headshot.jpg" alt="Naomi Shimberg">
+    <h1>Naomi Shimberg</h1>
+    <p class="affiliation">
+      PhD Candidate
+      <br>MIT Economics
+      <br>shimberg@mit.edu
+    </p>
+{% include about.html %}
+    <p class="links">
+      <a href="/files/ShimbergCV.pdf" target="_blank">CV</a> <span class="sep">|</span>
+      <a href="mailto:shimberg@mit.edu">Email</a> <span class="sep">|</span>
+      <a href="https://scholar.google.com/citations?user=35PlFvsAAAAJ&amp;hl=en" target="_blank">Google Scholar</a>
+    </p>
+  </header>
 
-  <body>
+  <section>
+{{ content }}
+  </section>
+  </div>
+  <script>
+    // Abstract and Media drop-downs: each button opens or closes the panel named in its aria-controls.
+    document.addEventListener("click", function (e) {
+      var button = e.target.closest("button.toggle");
+      if (!button) return;
+      var panel = document.getElementById(button.getAttribute("aria-controls"));
+      var open = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!open));
+      panel.hidden = open;
+    });
+  </script>
+</body>
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
-
-    {{ content }}
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
-
-    {% include scripts.html %}
-
-  </body>
 </html>
