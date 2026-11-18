@@ -77,6 +77,41 @@
   </script>
   <script data-goatcounter="https://naomishimberg.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
+  <script>
+    // Count clicks on links and on the Abstract/Slides/Media drop-downs as GoatCounter events,
+    // named by what was clicked, e.g. "Abstract · Paper title" or "CV". Nothing about the visitor is recorded.
+    (function () {
+      function words(el) { return (el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 150); }
+      function record(e) {
+        if (e.type === "auxclick" && e.button !== 1) return;
+        var gc = window.goatcounter;
+        var target = e.target.closest && e.target.closest("a[href], button.toggle");
+        if (!gc || !gc.count || !target) return;
+        var paper = target.closest(".paper");
+        var titleEl = paper && paper.querySelector(".title");
+        var paperTitle = titleEl ? words(titleEl) : "";
+        var name, dest = "";
+        if (target.tagName === "BUTTON") {
+          if (target.getAttribute("aria-expanded") === "true") return;   // closing a drop-down is not counted
+          name = words(target) + (paperTitle ? " · " + paperTitle : "");
+        } else {
+          var href = target.getAttribute("href");
+          if (href.charAt(0) === "#") return;
+          var url = new URL(target.href, location.href);
+          var isFile = /\.(pdf|docx?|pptx?|xlsx?|zip)$/i.test(url.pathname);
+          if (url.origin === location.origin && !isFile) return;   // moving between pages is already a page view
+          var label = words(target) || url.pathname.split("/").pop() || url.hostname;
+          if (target === titleEl) name = "Open · " + paperTitle;
+          else name = label + (paperTitle ? " · " + paperTitle : "");
+          dest = url.protocol === "mailto:" ? "Email" : url.href;
+        }
+        gc.count({ path: name, title: dest, event: true });
+      }
+      // Capture phase, so a drop-down's state is read before the toggle script flips it.
+      document.addEventListener("click", record, true);
+      document.addEventListener("auxclick", record, true);
+    })();
+  </script>
 </body>
 
 </html>
