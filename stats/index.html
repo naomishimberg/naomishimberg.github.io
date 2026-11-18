@@ -213,25 +213,33 @@
 
     // ---- API -----------------------------------------------------------------------------------
 
-    // GoatCounter allows 4 API requests per second, so requests go out one at a time, spaced.
+    // GoatCounter allows 4 API requests a second, and the browser's permission check before each
+    // request counts too, so requests go out one at a time, a little over half a second apart.
     var queue = Promise.resolve();
     var lastStart = 0;
     function api(path, params) {
       var url = API + path + "?" + new URLSearchParams(params).toString();
       var job = queue.then(function () {
-        var wait = Math.max(0, lastStart + 280 - Date.now());
+        var wait = Math.max(0, lastStart + 600 - Date.now());
         return new Promise(function (r) { setTimeout(r, wait); });
       }).then(function attempt(tries) {
+        tries = tries || 0;
+        var again = function () {
+          return new Promise(function (r) { setTimeout(r, 1500 * (tries + 1)); }).then(function () { return attempt(tries + 1); });
+        };
         // A rejected token is forgotten at once; skip the requests still waiting in line.
         if (!load(TOKEN_KEY)) { var stop = new Error("No token"); stop.status = 401; throw stop; }
         lastStart = Date.now();
         return fetch(url, { headers: { Authorization: "Bearer " + load(TOKEN_KEY) }, cache: "no-store" })
           .then(function (res) {
-            if (res.status === 429 && (tries || 0) < 2) {
-              return new Promise(function (r) { setTimeout(r, 1100); }).then(function () { return attempt((tries || 0) + 1); });
-            }
+            if (res.status === 429 && tries < 2) return again();
             if (!res.ok) { var err = new Error("HTTP " + res.status); err.status = res.status; throw err; }
             return res.json();
+          }, function (netErr) {
+            // When the rate limit turns away the browser's permission check, the request fails
+            // like a dropped connection. Pause and try again before reporting it.
+            if (tries < 2) return again();
+            throw netErr;
           });
       });
       queue = job.catch(function () {});
@@ -459,6 +467,8 @@
       } else if (err && err.status === 403) {
         drop(TOKEN_KEY);
         showSetup("That token can’t read statistics. Create a token with “Read statistics” ticked and paste it here.");
+      } else if (err && err.status === 429) {
+        showError("GoatCounter allows about 30 refreshes of this page an hour, and that limit has been reached. Wait a few minutes, then press Refresh.");
       } else {
         showError("Couldn’t reach GoatCounter" + (err && err.status ? " (error " + err.status + ")" : "") + ". Check your connection and press Refresh.");
       }
