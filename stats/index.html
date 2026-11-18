@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Site statistics | Naomi Shimberg</title>
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!--
+    Private visitor statistics for naomishimberg.github.io, read live from GoatCounter.
+    This page is not linked from the site, is not indexed, and holds no data itself:
+    it asks for a GoatCounter API token once and keeps it in this browser's localStorage.
+    It deliberately does not load the GoatCounter counting script, so checking stats
+    does not count as a visit.
+  -->
+  <style>
+    .st-label { font-size: 13px; color: var(--muted); margin-bottom: 2px; }
+    .st-big { font-size: 44px; font-weight: 600; line-height: 1.1; color: var(--ink); font-variant-numeric: tabular-nums; }
+    .st-change { font-size: 13px; color: var(--muted); margin-top: 4px; min-height: 19.5px; }
+    .st-change .up { color: var(--green); font-weight: 600; }
+    .st-summary { margin: 0 0 22px; }
+    .st-minis { display: flex; gap: 28px; margin: 0 0 22px; }
+    .st-mini-num { font-size: 20px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+    .st-periods a[aria-current="true"] { color: var(--ink); font-weight: 600; pointer-events: none; }
+    .st-linkbtn {
+      padding: 0; border: 0; background: none; cursor: pointer;
+      font: inherit; color: var(--green);
+    }
+    .st-linkbtn:hover { text-decoration: underline; }
+    .st-linkbtn:focus-visible { outline: 1px dotted var(--green); outline-offset: 2px; }
+    .st-updated { font-size: 12px; color: #888; }
+
+    .st-chart { position: relative; margin: 0 0 8px; }
+    .st-chart svg { display: block; width: 100%; overflow: visible; }
+    .st-chart .bar { fill: var(--green); }
+    .st-chart .bar.dim { fill: #c8d6cc; }
+    .st-chart .hit { fill: transparent; cursor: default; }
+    .st-chart .grid { stroke: #ececec; stroke-width: 1; }
+    .st-chart .axis { fill: #888; font-size: 11px; font-family: inherit; }
+    .st-tip {
+      position: absolute; top: 0; pointer-events: none; white-space: nowrap;
+      background: #fff; border: 1px solid #c8d6cc; padding: 4px 8px;
+      font-size: 12.5px; color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .st-tip b { color: var(--ink); font-weight: 600; }
+
+    .st-list { list-style: none; margin: 0; padding: 0; }
+    .st-row { margin: 0 0 12px; }
+    .st-row-top { display: flex; align-items: baseline; gap: 12px; }
+    .st-row-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text); }
+    .st-row-name.title { color: var(--green); font-weight: 600; }
+    .st-row-count { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+    .st-row-sub { font-size: 12.5px; color: #888; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .st-track { height: 3px; background: #edf2ee; margin-top: 4px; }
+    .st-fill { display: block; height: 3px; background: var(--green); }
+    .st-empty { color: #888; font-size: 13.5px; }
+
+    .st-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+    @media screen and (max-width: 600px) { .st-cols { grid-template-columns: 1fr; } }
+
+    .st-setup ol { padding-left: 20px; margin: 0 0 20px; color: var(--muted); }
+    .st-setup li { margin-bottom: 6px; }
+    .st-form { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+    .st-form input {
+      flex: 1; min-width: 220px; font: inherit; padding: 6px 8px;
+      border: 1px solid #c8d6cc; border-radius: 3px; color: var(--ink);
+    }
+    .st-form input:focus { outline: none; border-color: var(--green); }
+    .st-form button {
+      font: inherit; font-weight: 600; padding: 6px 14px; cursor: pointer;
+      background: var(--green); color: #fff; border: 0; border-radius: 3px;
+    }
+    .st-form button:hover { background: #17402a; }
+    .st-note { font-size: 13px; color: #888; }
+    .st-error {
+      border-left: 2px solid #b5523b; padding-left: 10px; margin: 0 0 20px;
+      font-size: 13.5px; color: var(--text);
+    }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+  <header>
+    <h1>Site statistics</h1>
+    <p class="affiliation">
+      Visitors to <a href="/">naomishimberg.github.io</a>
+    </p>
+
+    <div class="st-summary">
+      <div class="st-label" id="total-label">Visitors, last 7 days</div>
+      <div class="st-big" id="total">&mdash;</div>
+      <div class="st-change" id="change"></div>
+    </div>
+
+    <div class="st-minis">
+      <div>
+        <div class="st-label">Today</div>
+        <div class="st-mini-num" id="today">&mdash;</div>
+      </div>
+      <div>
+        <div class="st-label">Daily average</div>
+        <div class="st-mini-num" id="average">&mdash;</div>
+      </div>
+    </div>
+
+    <p class="links st-periods" id="periods"></p>
+    <p class="links">
+      <button class="st-linkbtn" id="refresh" type="button">Refresh</button> <span class="sep">|</span>
+      <a href="https://naomishimberg.goatcounter.com" target="_blank" rel="noopener">GoatCounter</a> <span class="sep">|</span>
+      <button class="st-linkbtn" id="forget" type="button">Forget token</button>
+    </p>
+    <p class="st-updated" id="updated"></p>
+  </header>
+
+  <section>
+    <div class="st-error" id="error" role="alert" hidden></div>
+
+    <div class="st-setup" id="setup" hidden>
+      <h3>Connect GoatCounter</h3>
+      <p class="intro">This page reads your visitor numbers from GoatCounter. It needs an API token once. The token stays in this browser and goes only to GoatCounter.</p>
+      <ol>
+        <li>Open <a href="https://naomishimberg.goatcounter.com/user/api" target="_blank" rel="noopener">GoatCounter&rsquo;s API settings</a> (sign in if asked).</li>
+        <li>Create a new token. Name it &ldquo;Stats page&rdquo; and tick only <em>Read statistics</em>.</li>
+        <li>Copy the token and paste it here.</li>
+      </ol>
+      <form class="st-form" id="token-form" autocomplete="off">
+        <input id="token-input" type="password" placeholder="Paste API token" aria-label="GoatCounter API token" spellcheck="false">
+        <button type="submit">Save</button>
+      </form>
+      <p class="st-note">Use this page on another device by pasting the same token there.</p>
+    </div>
+
+    <div id="stats" hidden>
+      <h3 id="chart-title">Daily visitors</h3>
+      <div class="st-chart" id="chart"></div>
+
+      <h3>Most visited pages</h3>
+      <ol class="st-list" id="pages"></ol>
+
+      <h3>What visitors clicked</h3>
+      <ol class="st-list" id="events"></ol>
+
+      <h3>Where visitors came from</h3>
+      <ol class="st-list" id="refs"></ol>
+
+      <div class="st-cols">
+        <div>
+          <h3>Countries</h3>
+          <ol class="st-list" id="locations"></ol>
+        </div>
+        <div>
+          <h3>Devices</h3>
+          <ol class="st-list" id="systems"></ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <script>
+  (function () {
+    "use strict";
+
+    var API = "https://naomishimberg.goatcounter.com/api/v0";
+    var TOKEN_KEY = "gc-stats-token";
+    var PERIOD_KEY = "gc-stats-period";
+    var PERIODS = [
+      { days: 7, label: "7 days", long: "last 7 days", prev: "previous 7 days" },
+      { days: 30, label: "30 days", long: "last 30 days", prev: "previous 30 days" },
+      { days: 90, label: "90 days", long: "last 90 days", prev: "previous 90 days" },
+      { days: 365, label: "1 year", long: "last 12 months", prev: "previous 12 months" }
+    ];
+
+    var $ = function (id) { return document.getElementById(id); };
+    var fmt = function (n) { return Number(n || 0).toLocaleString("en-US"); };
+
+    // localStorage can be missing or throw (private mode); the page still works for the visit.
+    var memory = {};
+    function load(key) { try { return localStorage.getItem(key); } catch (e) { return memory[key] || null; } }
+    function save(key, val) { try { localStorage.setItem(key, val); } catch (e) { memory[key] = val; } }
+    function drop(key) { try { localStorage.removeItem(key); } catch (e) {} delete memory[key]; }
+
+    var period = PERIODS.filter(function (p) { return String(p.days) === load(PERIOD_KEY); })[0] || PERIODS[0];
+    var runId = 0;
+
+    // ---- Dates ---------------------------------------------------------------------------------
+
+    function iso(d) { return d.toISOString().replace(/\.\d{3}Z$/, "Z"); }
+    function startOfDay(d) { var x = new Date(d); x.setHours(0, 0, 0, 0); return x; }
+    function addDays(d, n) { var x = new Date(d); x.setDate(x.getDate() + n); return x; }
+
+    function ranges(days) {
+      var today = startOfDay(new Date());
+      var start = addDays(today, -(days - 1));
+      var end = new Date(addDays(today, 1).getTime() - 1000);
+      var prevStart = addDays(start, -days);
+      var prevEnd = new Date(start.getTime() - 1000);
+      return { start: iso(start), end: iso(end), prevStart: iso(prevStart), prevEnd: iso(prevEnd) };
+    }
+
+    function parseDay(s) { var p = s.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
+    function dayLabel(d, opts) { return d.toLocaleDateString("en-US", opts); }
+
+    // ---- API -----------------------------------------------------------------------------------
+
+    // GoatCounter allows 4 API requests per second, so requests go out one at a time, spaced.
+    var queue = Promise.resolve();
+    var lastStart = 0;
+    function api(path, params) {
+      var url = API + path + "?" + new URLSearchParams(params).toString();
+      var job = queue.then(function () {
+        var wait = Math.max(0, lastStart + 280 - Date.now());
+        return new Promise(function (r) { setTimeout(r, wait); });
+      }).then(function attempt(tries) {
+        // A rejected token is forgotten at once; skip the requests still waiting in line.
+        if (!load(TOKEN_KEY)) { var stop = new Error("No token"); stop.status = 401; throw stop; }
+        lastStart = Date.now();
+        return fetch(url, { headers: { Authorization: "Bearer " + load(TOKEN_KEY) }, cache: "no-store" })
+          .then(function (res) {
+            if (res.status === 429 && (tries || 0) < 2) {
+              return new Promise(function (r) { setTimeout(r, 1100); }).then(function () { return attempt((tries || 0) + 1); });
+            }
+            if (!res.ok) { var err = new Error("HTTP " + res.status); err.status = res.status; throw err; }
+            return res.json();
+          });
+      });
+      queue = job.catch(function () {});
+      return job;
+    }
+
+    // ---- Drawing -------------------------------------------------------------------------------
+
+    function el(tag, cls, text) {
+      var e = document.createElement(tag);
+      if (cls) e.className = cls;
+      if (text != null) e.textContent = text;
+      return e;
+    }
+
+    function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+
+    function placeholder(listId) {
+      var list = $(listId); clear(list);
+      list.appendChild(el("li", "st-empty", "Loading…"));
+    }
+
+    // rows: [{name, sub, count, href}]
+    function drawList(listId, rows, emptyText) {
+      var list = $(listId); clear(list);
+      if (!rows.length) { list.appendChild(el("li", "st-empty", emptyText || "No visits in this period.")); return; }
+      var max = Math.max.apply(null, rows.map(function (r) { return r.count; })) || 1;
+      rows.forEach(function (r) {
+        var li = el("li", "st-row");
+        var top = el("div", "st-row-top");
+        var name;
+        if (r.href) {
+          name = el("a", "st-row-name title", r.name);
+          name.href = r.href; name.target = "_blank"; name.rel = "noopener";
+        } else {
+          name = el("span", "st-row-name", r.name);
+        }
+        name.title = r.name;
+        top.appendChild(name);
+        top.appendChild(el("span", "st-row-count", fmt(r.count)));
+        li.appendChild(top);
+        if (r.sub) li.appendChild(el("div", "st-row-sub", r.sub));
+        var track = el("div", "st-track");
+        var fill = el("span", "st-fill");
+        fill.style.width = Math.max(1.5, (r.count / max) * 100) + "%";
+        track.appendChild(fill);
+        li.appendChild(track);
+        list.appendChild(li);
+      });
+    }
+
+    var chartData = [];
+    function drawChart() {
+      var box = $("chart"); clear(box);
+      var data = chartData;
+      if (!data.length) { box.appendChild(el("p", "st-empty", "No visits in this period.")); return; }
+
+      var W = Math.max(260, box.clientWidth), H = 190;
+      var padL = 30, padB = 22, padT = 8;
+      var plotW = W - padL, plotH = H - padB - padT;
+      var max = Math.max.apply(null, data.map(function (d) { return d.count; }));
+      var step = niceStep(max);
+      var top = Math.max(step, Math.ceil(max / step) * step);
+
+      var NS = "http://www.w3.org/2000/svg";
+      var svg = document.createElementNS(NS, "svg");
+      svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+      svg.setAttribute("height", H);
+      svg.setAttribute("role", "img");
+      svg.setAttribute("aria-label", "Visitors per " + (data.weekly ? "week" : "day"));
+
+      function line(y, label) {
+        var l = document.createElementNS(NS, "line");
+        l.setAttribute("class", "grid");
+        l.setAttribute("x1", padL); l.setAttribute("x2", W);
+        l.setAttribute("y1", y); l.setAttribute("y2", y);
+        svg.appendChild(l);
+        var t = document.createElementNS(NS, "text");
+        t.setAttribute("class", "axis");
+        t.setAttribute("x", padL - 8); t.setAttribute("y", y + 4);
+        t.setAttribute("text-anchor", "end");
+        t.textContent = label;
+        svg.appendChild(t);
+      }
+      for (var v = 0; v <= top; v += step) line(padT + plotH - (v / top) * plotH, fmt(v));
+
+      var n = data.length;
+      var slot = plotW / n;
+      var gap = n > 60 ? Math.min(1, slot * 0.2) : Math.max(1, slot * 0.22);
+      var bw = Math.max(1, slot - gap);
+      var tip = el("div", "st-tip"); tip.hidden = true;
+
+      data.forEach(function (d, i) {
+        var h = top ? (d.count / top) * plotH : 0;
+        var x = padL + i * slot + gap / 2;
+        var bar = document.createElementNS(NS, "rect");
+        bar.setAttribute("class", "bar" + (d.partial ? " dim" : ""));
+        bar.setAttribute("x", x); bar.setAttribute("width", bw);
+        bar.setAttribute("y", padT + plotH - Math.max(h, d.count ? 1.5 : 0));
+        bar.setAttribute("height", Math.max(h, d.count ? 1.5 : 0));
+        svg.appendChild(bar);
+
+        var hit = document.createElementNS(NS, "rect");
+        hit.setAttribute("class", "hit");
+        hit.setAttribute("x", padL + i * slot); hit.setAttribute("width", slot);
+        hit.setAttribute("y", padT); hit.setAttribute("height", plotH);
+        function show() {
+          clear(tip);
+          tip.appendChild(document.createTextNode(d.label + ": "));
+          tip.appendChild(el("b", null, fmt(d.count)));
+          tip.appendChild(document.createTextNode(d.count === 1 ? " visitor" : " visitors"));
+          tip.hidden = false;
+          var cx = padL + (i + 0.5) * slot;
+          var tw = tip.offsetWidth;
+          tip.style.left = Math.min(Math.max(0, cx - tw / 2), W - tw) + "px";
+          tip.style.top = Math.max(0, padT + plotH - h - 34) + "px";
+          bar.style.fill = "#17402a";
+        }
+        function hide() { tip.hidden = true; bar.style.fill = ""; }
+        hit.addEventListener("mouseenter", show);
+        hit.addEventListener("mouseleave", hide);
+        hit.addEventListener("touchstart", show, { passive: true });
+        svg.appendChild(hit);
+      });
+
+      // A handful of date labels along the bottom.
+      var labels = Math.min(n, W < 450 ? 4 : 7);
+      for (var k = 0; k < labels; k++) {
+        var idx = labels === 1 ? 0 : Math.round(k * (n - 1) / (labels - 1));
+        var t = document.createElementNS(NS, "text");
+        t.setAttribute("class", "axis");
+        t.setAttribute("x", padL + (idx + 0.5) * slot);
+        t.setAttribute("y", H - 4);
+        t.setAttribute("text-anchor", k === 0 && n > 7 ? "start" : (k === labels - 1 && n > 7 ? "end" : "middle"));
+        if (k === 0 && n > 7) t.setAttribute("x", padL + idx * slot);
+        if (k === labels - 1 && n > 7) t.setAttribute("x", padL + (idx + 1) * slot);
+        t.textContent = data[idx].short;
+        svg.appendChild(t);
+      }
+
+      box.appendChild(svg);
+      box.appendChild(tip);
+      svg.addEventListener("mouseleave", function () { tip.hidden = true; });
+    }
+
+    function niceStep(max) {
+      if (max <= 4) return 1;
+      var raw = max / 4, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+      var norm = raw / mag;
+      return (norm <= 1 ? 1 : norm <= 2 ? 2 : norm <= 5 ? 5 : 10) * mag;
+    }
+
+    // Daily stats → bars. A year is shown by week so the bars stay readable.
+    function toChartData(stats) {
+      var days = stats.map(function (s) { return { date: parseDay(s.day), count: s.daily || 0 }; });
+      if (days.length <= 120) {
+        var out = days.map(function (d) {
+          return {
+            count: d.count,
+            label: dayLabel(d.date, { weekday: "short", month: "short", day: "numeric" }),
+            short: dayLabel(d.date, { month: "short", day: "numeric" })
+          };
+        });
+        return out;
+      }
+      var weeks = [];
+      for (var i = 0; i < days.length; i += 7) {
+        var chunk = days.slice(i, i + 7);
+        var sum = chunk.reduce(function (a, d) { return a + d.count; }, 0);
+        weeks.push({
+          count: sum,
+          partial: chunk.length < 7,
+          label: "Week of " + dayLabel(chunk[0].date, { month: "short", day: "numeric" }),
+          short: dayLabel(chunk[0].date, { month: "short", year: "2-digit" }).replace(" ", " ’")
+        });
+      }
+      weeks.weekly = true;
+      return weeks;
+    }
+
+    // ---- Page state ----------------------------------------------------------------------------
+
+    function drawPeriods() {
+      var p = $("periods"); clear(p);
+      PERIODS.forEach(function (opt, i) {
+        if (i) {
+          p.appendChild(document.createTextNode(" "));
+          p.appendChild(el("span", "sep", "|"));
+          p.appendChild(document.createTextNode(" "));
+        }
+        var a = el("a", null, opt.label);
+        a.href = "#";
+        if (opt === period) a.setAttribute("aria-current", "true");
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          period = opt; save(PERIOD_KEY, String(opt.days));
+          drawPeriods(); refresh();
+        });
+        p.appendChild(a);
+      });
+    }
+
+    function showError(msg) {
+      var box = $("error");
+      if (!msg) { box.hidden = true; return; }
+      box.textContent = msg; box.hidden = false;
+    }
+
+    function showSetup(msg) {
+      $("setup").hidden = false;
+      $("stats").hidden = true;
+      $("forget").hidden = true;
+      $("forget").previousElementSibling.hidden = true;
+      ["total", "today", "average"].forEach(function (id) { $(id).textContent = "—"; });
+      $("change").textContent = "";
+      $("updated").textContent = "";
+      showError(msg || "");
+      setTimeout(function () { $("token-input").focus(); }, 0);
+    }
+
+    function handleFailure(err) {
+      if (err && err.status === 401) {
+        drop(TOKEN_KEY);
+        showSetup("GoatCounter didn’t accept that token. Check that you copied all of it, then paste it again.");
+      } else if (err && err.status === 403) {
+        drop(TOKEN_KEY);
+        showSetup("That token can’t read statistics. Create a token with “Read statistics” ticked and paste it here.");
+      } else {
+        showError("Couldn’t reach GoatCounter" + (err && err.status ? " (error " + err.status + ")" : "") + ". Check your connection and press Refresh.");
+      }
+    }
+
+    function refresh() {
+      if (!load(TOKEN_KEY)) { showSetup(); return; }
+      var id = ++runId;
+      var r = ranges(period.days);
+      var common = { start: r.start, end: r.end };
+      var current = function () { return id === runId; };
+
+      $("setup").hidden = true;
+      $("stats").hidden = false;
+      $("forget").hidden = false;
+      $("forget").previousElementSibling.hidden = false;
+      showError("");
+      $("total-label").textContent = "Visitors, " + period.long;
+      $("chart-title").textContent = period.days > 120 ? "Weekly visitors" : "Daily visitors";
+      $("total").style.opacity = "0.35";
+      $("updated").textContent = "Loading…";
+      ["pages", "events", "refs", "locations", "systems"].forEach(placeholder);
+
+      var failed = null;
+      function guard(p) { return p.catch(function (e) { if (!failed) { failed = e; handleFailure(e); } throw e; }); }
+
+      // Clicks are stored as "event" paths. Visitor totals, the chart, referrers, countries and
+      // devices count page views only, so they are asked for with the site's page paths alone.
+      guard(api("/paths", { limit: 200 })).then(function (res) {
+        if (!current()) return;
+        var ids = (res.paths || []).filter(function (p) { return !p.event; }).map(function (p) { return p.id; });
+        var only = ids.length && !res.more ? { include_paths: ids.join(",") } : {};
+        var withPages = function (extra) { return Object.assign({}, extra, only); };
+
+        var totalP = guard(api("/stats/total", withPages(common))).then(function (res) {
+          if (!current()) return res;
+          var stats = res.stats || [];
+          var visitors = (res.total || 0) - (res.total_events || 0);
+          $("total").textContent = fmt(visitors);
+          $("total").style.opacity = "";
+          var last = stats[stats.length - 1];
+          $("today").textContent = fmt(last ? last.daily : 0);
+          $("average").textContent = fmt(Math.round(visitors / period.days));
+          chartData = toChartData(stats);
+          drawChart();
+          return visitors;
+        });
+
+        var prevP = guard(api("/stats/total", withPages({ start: r.prevStart, end: r.prevEnd }))).then(function (res) {
+          return (res.total || 0) - (res.total_events || 0);
+        });
+        Promise.all([totalP, prevP]).then(function (both) {
+          if (!current()) return;
+          var now = both[0], before = both[1];
+          var box = $("change"); clear(box);
+          if (!before) { box.textContent = now ? "No visits in the " + period.prev : ""; return; }
+          var pct = Math.round(((now - before) / before) * 100);
+          var span = el("span", pct > 0 ? "up" : "", (pct > 0 ? "+" : pct < 0 ? "\u2212" : "\u00b1") + Math.abs(pct) + "%");
+          box.appendChild(span);
+          box.appendChild(document.createTextNode(" vs " + period.prev + " (" + fmt(before) + ")"));
+        }).catch(function () {});
+
+        guard(api("/stats/hits", { start: r.start, end: r.end, limit: 100 })).then(function (res) {
+          if (!current()) return;
+          var hits = res.hits || [];
+          drawList("pages", hits.filter(function (h) { return !h.event; }).slice(0, 10).map(function (h) {
+            var path = String(h.path || "");
+            var safe = path.charAt(0) === "/" && path.charAt(1) !== "/";
+            return {
+              name: h.title ? h.title : path,
+              sub: path === "/" ? "/ (home page)" : (h.title ? path : ""),
+              count: h.count,
+              href: safe ? new URL(path, location.origin).href : null
+            };
+          }));
+          drawList("events", hits.filter(function (h) { return h.event; }).slice(0, 12).map(function (h) {
+            return { name: String(h.path || ""), sub: String(h.title || ""), count: h.count };
+          }), "No clicks recorded in this period.");
+        }).catch(function () {});
+
+        guard(api("/stats/toprefs", withPages({ start: r.start, end: r.end, limit: 8 }))).then(function (res) {
+          if (!current()) return;
+          drawList("refs", (res.stats || []).map(function (s) {
+            var name = s.name ? s.name : "Direct, bookmarks, or email";
+            return { name: name, count: s.count };
+          }));
+        }).catch(function () {});
+
+        guard(api("/stats/locations", withPages({ start: r.start, end: r.end, limit: 8 }))).then(function (res) {
+          if (!current()) return;
+          drawList("locations", (res.stats || []).map(function (s) {
+            return { name: s.name || "Unknown", count: s.count };
+          }));
+        }).catch(function () {});
+
+        guard(api("/stats/systems", withPages({ start: r.start, end: r.end, limit: 6 }))).then(function (res) {
+          if (!current()) return;
+          drawList("systems", (res.stats || []).map(function (s) {
+            return { name: s.name || "Unknown", count: s.count };
+          }));
+          $("updated").textContent = failed ? "" : "Updated " + new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+        }).catch(function () { if (current()) $("updated").textContent = ""; });
+      }).catch(function () { if (current()) $("updated").textContent = ""; });
+    }
+
+    // ---- Wiring --------------------------------------------------------------------------------
+
+    $("token-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var v = $("token-input").value.trim();
+      if (!v) return;
+      save(TOKEN_KEY, v);
+      $("token-input").value = "";
+      refresh();
+    });
+    $("refresh").addEventListener("click", refresh);
+    $("forget").addEventListener("click", function () { drop(TOKEN_KEY); showSetup(); });
+
+    var resizeTimer;
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () { if (!$("stats").hidden) drawChart(); }, 120);
+    });
+
+    drawPeriods();
+    refresh();
+  })();
+  </script>
+</body>
+
+</html>
