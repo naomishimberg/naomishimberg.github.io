@@ -44,6 +44,9 @@ a:hover { text-decoration: underline; }
 /* Paper titles are green and semi-bold whether or not they link anywhere. */
 .title { color: var(--green); font-weight: 600; }
 
+/* Coauthor names link out but stay grey like the rest of the "with ..." line. */
+.meta a { color: inherit; }
+
 .paper { margin: 0 0 20px; color: var(--muted); }
 .paper:last-child { margin-bottom: 0; }
 
